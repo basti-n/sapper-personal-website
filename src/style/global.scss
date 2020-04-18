@@ -1,0 +1,26 @@
+:root {
+	--light-gray: #f2f2f2;
+}
+
+.divider {
+	position: absolute;
+	width: 1px;
+	height: 100vh;
+	background: var(--light-gray);
+	top: 0;
+	bottom: 0;
+    overflow-y: hidden;
+    z-index: -1;
+
+	&:first-child {
+		left: 10%;
+	}
+
+	&:nth-child(2) {
+		left: 50%;
+	}
+
+	&:nth-child(3) {
+		left: 85%;
+	}
+}
