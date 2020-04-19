@@ -33,11 +33,11 @@
     <NavItem
       isCurrentRoute={currentRoute === 'about'}
       route="about"
-      shouldPrefetch={false} />
+      shouldPrefetch={true} />
     <NavItem
       isCurrentRoute={currentRoute === 'blog'}
       route="blog"
-      shouldPrefetch={false} />
+      shouldPrefetch={true} />
     <NavItem
       isCurrentRoute={currentRoute === 'projects'}
       route="projects"
