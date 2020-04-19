@@ -1,16 +1,30 @@
 <script>
+  import Overlay from "./Overlay.svelte";
   import NavItem from "./Nav-Item.svelte";
+  import Burger from "./Burger.svelte";
 
   export let currentRoute;
+  let showOverlay;
+
+  function setShowOverlay({detail: shouldShow}) {
+    showOverlay = shouldShow;
+    console.log(showOverlay)
+  }
 </script>
 
-<style>
-  .nav-container {
+<style lang="scss">
+  nav {
     display: flex;
+    align-items: center;
+    .nav-container {
+      display: flex;
+      padding-left: 0
+    }
   }
 </style>
 
 <nav>
+  <Burger on:statusChange={setShowOverlay} isChecked={showOverlay}/>
   <ul class="nav-container">
     <NavItem
       isCurrentRoute={currentRoute === undefined}
@@ -30,3 +44,7 @@
       shouldPrefetch={true} />
   </ul>
 </nav>
+
+{#if showOverlay}
+  <Overlay on:close={setShowOverlay} />
+{/if}
