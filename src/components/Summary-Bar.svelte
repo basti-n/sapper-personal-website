@@ -4,6 +4,7 @@
 </script>
 
 <style lang="scss">
+  @import "../style/global.scss";
   @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=block");
   @import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=block");
 
@@ -15,7 +16,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 14rem;
+    width: var(--summary-bar-width);
     height: 100%;
     z-index: -1;
 
