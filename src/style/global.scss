@@ -1,14 +1,14 @@
-@font-face{
-	font-family: 'Bungee Inline';
-	src: url('./fonts/BungeeInline-Regular.ttf') format('tff');
-  }
-
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=block");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=block");
 
 :root {
     --light-gray: #f2f2f2;
 	--black: #555;
+	--dark-black: #000000;
 	
 	--summary-bar-width: 14rem;
+	--text-font-size: 16px;
+	--text-gray: #A0A0A0;
 }
 
 .divider {
@@ -31,5 +31,19 @@
 
 	&:nth-child(3) {
 		left: 85%;
+	}
+}
+
+.center-content {
+	display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+}
+
+.center-main-content {
+	margin-right: 5.5rem;
+
+	@media (max-width: 480px) {
+	  margin-right: 0;
 	}
 }

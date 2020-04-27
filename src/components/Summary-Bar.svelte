@@ -1,12 +1,17 @@
 <script>
   export let content;
   export let position = "right";
+
+  export let fadeIn = false;
+
+  $: {
+    fadeIn = !!content;
+    setTimeout(() => (fadeIn = false), 2000);
+  }
 </script>
 
 <style lang="scss">
   @import "../style/global.scss";
-  @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=block");
-  @import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=block");
 
   * {
     font-display: block;
@@ -43,6 +48,19 @@
       font-size: 1.2rem;
       text-transform: capitalize;
       padding: 0 1rem;
+
+      &.fade-in {
+        animation: fadeIn 2000ms;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     }
   }
 </style>
@@ -52,5 +70,5 @@
   class:space={position === 'center'}
   class="container">
   <h3 class="title">{content.title}</h3>
-  <p class="text">{content.text}</p>
+  <p class="text" class:fade-in={fadeIn}>{content.text}</p>
 </article>
