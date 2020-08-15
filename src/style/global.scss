@@ -1,14 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=block");
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=block");
+@import './mixins/media';
+@import './mixins/milestone';
 
 :root {
-    --light-gray: #f2f2f2;
+	--light-gray: #f2f2f2;
+	--gray: #e5e5e5 ;
 	--black: #555;
 	--dark-black: #000000;
-	
 	--summary-bar-width: 14rem;
 	--text-font-size: 16px;
+	--text-font-size-lg: 22px;
 	--text-gray: #A0A0A0;
+	--max-width: 700px;
+}
+
+.page-container {
+	max-width: var(--max-width);
+	padding: 5%;
+	margin: 0 auto;
 }
 
 .divider {

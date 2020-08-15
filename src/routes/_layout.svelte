@@ -9,12 +9,12 @@
   @import "../style/global.scss";
 
   :root {
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   .layout {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr 60px;
     width: calc(100% - var(--summary-bar-width));
     height: 100vh;
 
@@ -25,15 +25,17 @@
 
   main {
     display: grid;
-    align-items: center
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    scroll-snap-type: y mandatory;
+    scroll-padding: 20px 0;
   }
 
   footer {
-    position: absolute;
-    bottom: 1rem;
     display: flex;
     justify-content: center;
-    width: calc(100% - var(--summary-bar-width));
 
     @media (max-width: 480px) {
       width: 100%;

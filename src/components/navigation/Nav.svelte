@@ -6,9 +6,8 @@
   export let currentRoute;
   let showOverlay;
 
-  function setShowOverlay({detail: shouldShow}) {
+  function setShowOverlay({ detail: shouldShow }) {
     showOverlay = shouldShow;
-    console.log(showOverlay)
   }
 </script>
 
@@ -18,13 +17,13 @@
     align-items: center;
     .nav-container {
       display: flex;
-      padding-left: 0
+      padding-left: 0;
     }
   }
 </style>
 
 <nav>
-  <Burger on:statusChange={setShowOverlay} isChecked={showOverlay}/>
+  <Burger on:statusChange={setShowOverlay} isChecked={showOverlay} />
   <ul class="nav-container">
     <NavItem
       isCurrentRoute={currentRoute === undefined}
@@ -35,12 +34,12 @@
       route="about"
       shouldPrefetch={true} />
     <NavItem
-      isCurrentRoute={currentRoute === 'blog'}
-      route="blog"
-      shouldPrefetch={true} />
-    <NavItem
       isCurrentRoute={currentRoute === 'projects'}
       route="projects"
+      shouldPrefetch={true} />
+    <NavItem
+      isCurrentRoute={currentRoute === 'stack'}
+      route="stack"
       shouldPrefetch={true} />
   </ul>
 </nav>
