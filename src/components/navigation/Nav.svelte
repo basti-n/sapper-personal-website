@@ -8,7 +8,6 @@
 
   function setShowOverlay({ detail: shouldShow }) {
     showOverlay = shouldShow;
-    console.log(showOverlay);
   }
 </script>
 
