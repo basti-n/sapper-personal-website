@@ -8,6 +8,8 @@
 
   $line-width: 2px;
   $line-color: var(--gray);
+  $offset-top: 6px;
+  $offset-left: 60px;
 
   .header {
     display: flex;
@@ -32,6 +34,9 @@
     margin-bottom: 0;
     font-size: var(--text-font-size);
 
+    display: grid;
+    grid-template-columns: $offset-left 1fr;
+
     .subtitle {
       font-weight: bold;
     }
@@ -46,6 +51,7 @@
   .line-1 {
     width: 50px;
     &:before {
+      top: 10px;
       left: 0;
       width: 40px;
       height: $line-width;
@@ -58,15 +64,16 @@
       border-radius: 50%;
       background: $line-color;
       right: 3px;
-      top: -5px;
+      top: $offset-top;
     }
 
     .horizontal-line {
       &:before {
         width: $line-width;
-        height: 15px;
+        height: 100%;
         background: $line-color;
         right: 7px;
+        top: $offset-top;
       }
     }
   }
@@ -77,21 +84,24 @@
     left: -18px;
     bottom: -8px;
     &:before {
-      width: 120%;
+      width: calc(100% - ((#{$offset-left}) / 2));
       height: $line-width;
       background: $line-color;
       bottom: 2px;
+      left: $offset-left;
     }
   }
 </style>
 
 <div class="header">
-  <div class="line line-1">
-    <div class="horizontal-line" />
-  </div>
   <h5 class="title">
-    {title}
-    <span class="subtitle">| {subtitle}</span>
-    <div class="line line-2" />
+    <div class="line line-1">
+      <div class="horizontal-line" />
+    </div>
+    <div class="">
+      {title}
+      <span class="subtitle">| {subtitle}</span>
+      <div class="line line-2" />
+    </div>
   </h5>
 </div>
