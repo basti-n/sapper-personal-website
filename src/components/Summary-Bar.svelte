@@ -1,6 +1,14 @@
 <script>
   export let content;
   export let position = "right";
+
+  const MOBILE_TRESHOLD_PX = 650;
+
+  let isMobile = window.innerWidth < MOBILE_TRESHOLD_PX;
+
+  function handleWindowResize({ target }) {
+    isMobile = target.innerWidth < MOBILE_TRESHOLD_PX;
+  }
 </script>
 
 <style lang="scss">
@@ -46,10 +54,14 @@
   }
 </style>
 
-<article
-  style="background-image: url('{content.img.src}'); background-size: cover"
-  class:space={position === 'center'}
-  class="container">
-  <h3 class="title">{content.title}</h3>
-  <p class="text">{content.text}</p>
-</article>
+<svelte:window on:resize={handleWindowResize} />
+
+{#if !isMobile}
+  <article
+    style="background-image: url('{content.img.src}'); background-size: cover"
+    class:space={position === 'center'}
+    class="container">
+    <h3 class="title">{content.title}</h3>
+    <p class="text">{content.text}</p>
+  </article>
+{/if}

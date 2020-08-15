@@ -2,6 +2,9 @@
   import HighlightText from "../components/texts/HighlightText.svelte";
   import SummaryBar from "../components/Summary-Bar.svelte";
   import HeroText from "../components/texts/HeroText.svelte";
+  import Preload from "../components/Preload.svelte";
+
+  const preloadImages = ["images/stack.jpg"];
 
   const summaryBarContent = {
     What: {
@@ -148,3 +151,5 @@
 
   <SummaryBar content={activeContent} position="center" />
 </div>
+
+<Preload {preloadImages} />
