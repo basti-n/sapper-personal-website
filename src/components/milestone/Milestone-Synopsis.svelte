@@ -32,5 +32,7 @@
     <div class="marker" />
     <MilestoneDescription {description} />
   </div>
-  <MilestoneMarker text={timelineMarker} />
+  {#if timelineMarker}
+    <MilestoneMarker text={timelineMarker} />
+  {/if}
 </section>
