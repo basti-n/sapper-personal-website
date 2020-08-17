@@ -26,7 +26,8 @@
 
   const content = {
     title: "Stack",
-    text: `What I have worked with`,
+    subtitle: `What I have worked with`,
+    text: ``,
     img: {
       src: "images/stack.jpg",
       alt: "stack illustration"
@@ -74,6 +75,7 @@
     <div class="stack">
       {#each primaryTechImages as img}
         <StackIcon
+          shape="rectangle"
           size="large"
           sizeAdjust={img.size}
           imageUrl={`images/technologies/${img.name}.svg`} />
@@ -85,6 +87,7 @@
     <div class="stack">
       {#each secondaryTechImages as img}
         <StackIcon
+          shape="circle"
           size="small"
           sizeAdjust={img.size}
           imageUrl={`images/technologies/${img.name}.svg`} />

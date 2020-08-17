@@ -9,8 +9,10 @@
   const summaryBarContent = {
     What: {
       title: `Value Creation`,
-      text: `What To Build?
-          Where is value Created?`,
+      subtitle: `What To Build?`,
+      text: `DECISION: Which user do we want to serve, 
+        for which purpose, 
+        with which USPs?`,
       img: {
         src: "images/value-creation.svg",
         alt: "value creation illustration"
@@ -19,8 +21,8 @@
     },
     How: {
       title: `Value Creation`,
-      text: `How To Build it?
-          Where is value Created?`,
+      subtitle: `How To Build it?`,
+      text: `EXECUTION: Building the actual product`,
       img: {
         src: "images/value-creation.svg",
         alt: "value creation illustration"
@@ -29,8 +31,8 @@
     },
     Why: {
       title: `Value Creation`,
-      text: `Why Build it?
-          Where is value Created?`,
+      subtitle: `Why Build it?`,
+      text: `ELABORATION: Finding the purpose that drives the What and How`,
       img: {
         src: "images/value-creation.svg",
         alt: "value creation illustration"

@@ -1,10 +1,18 @@
 <script>
+  import { onMount } from "svelte";
   export let content;
   export let position = "right";
 
   const MOBILE_TRESHOLD_PX = 650;
+  let isMobile = false;
+  let isMounted = false;
 
-  let isMobile = window.innerWidth < MOBILE_TRESHOLD_PX;
+  onMount(async () => initView());
+
+  function initView() {
+    isMounted = true;
+    isMobile = window.innerWidth < MOBILE_TRESHOLD_PX;
+  }
 
   function handleWindowResize({ target }) {
     isMobile = target.innerWidth < MOBILE_TRESHOLD_PX;
@@ -45,7 +53,8 @@
       padding: 0 0.25rem;
     }
 
-    .text {
+    .text,
+    .subtitle {
       font-family: "Bungee Hairline", cursive;
       font-size: 1.2rem;
       text-transform: capitalize;
@@ -56,12 +65,13 @@
 
 <svelte:window on:resize={handleWindowResize} />
 
-{#if !isMobile}
+{#if !isMobile && isMounted}
   <article
     style="background-image: url('{content.img.src}'); background-size: cover"
     class:space={position === 'center'}
     class="container">
     <h3 class="title">{content.title}</h3>
+    <p class="subtitle">{content.subtitle}</p>
     <p class="text">{content.text}</p>
   </article>
 {/if}

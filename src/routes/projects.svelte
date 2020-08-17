@@ -1,9 +1,10 @@
 <script>
-import SummaryBar from '../components/Summary-Bar.svelte'
+  import SummaryBar from "../components/Summary-Bar.svelte";
 
   const content = {
     title: "Portfolio",
-    text: `What I have been up to`,
+    subtitle: `Some of my work`,
+    text: `Or How I do the the How`,
     img: {
       src: "images/portfolio.svg",
       alt: "portfolio illustration"
@@ -17,5 +18,5 @@ import SummaryBar from '../components/Summary-Bar.svelte'
 
 <div class="container">
   <h1>Projects</h1>
-  <SummaryBar {content}/>
+  <SummaryBar {content} />
 </div>

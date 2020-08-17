@@ -16,7 +16,8 @@
 
   const content = {
     title: "PM 2 Dev",
-    text: `All About Building Great Products`,
+    subtitle: `All About Building Great Products`,
+    text: `Journey from the what to the how`,
     img: {
       src: "images/pm-to-dev.svg",
       alt: "product manager to developer illustration"

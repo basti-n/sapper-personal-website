@@ -1,7 +1,24 @@
 <script>
+  import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+
+  import Skeleton from "./Skeleton.svelte";
+
   export let imageUrl;
   export let size;
   export let sizeAdjust;
+  export let shape;
+  export let imageLoaded = false;
+
+  onMount(async () => {
+    loadImage();
+  });
+
+  function loadImage() {
+    const img = new Image();
+    img.src = imageUrl;
+    img.onload = () => (imageLoaded = true);
+  }
 </script>
 
 <style lang="scss">
@@ -31,10 +48,18 @@
   }
 </style>
 
-<div
-  class="icon"
-  class:large={size === 'large'}
-  class:small={size === 'small'}
-  class:size-up={sizeAdjust === 'up'}
-  class:size-down={sizeAdjust === 'down'}
-  style="background-image: url({imageUrl})" />
+{#if imageLoaded}
+  <div
+    in:fade
+    class="icon"
+    class:large={size === 'large'}
+    class:small={size === 'small'}
+    class:size-up={sizeAdjust === 'up'}
+    class:size-down={sizeAdjust === 'down'}
+    style="background-image: url({imageUrl})" />
+{:else}
+  <Skeleton
+    height={size === 'large' ? 80 : 40}
+    width={size === 'large' ? 80 : 40}
+    {shape} />
+{/if}
