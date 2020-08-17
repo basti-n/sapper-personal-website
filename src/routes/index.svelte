@@ -4,7 +4,11 @@
   import HeroText from "../components/texts/HeroText.svelte";
   import Preload from "../components/Preload.svelte";
 
-  const preloadImages = ["images/stack.jpg"];
+  const preloadImages = [
+    "images/stack.jpg",
+    "images/projects/StravaScript_1.png",
+    "images/projects/StravaScript_2.png"
+  ];
 
   const summaryBarContent = {
     What: {
