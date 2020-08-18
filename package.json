@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "build:netlify": "sapper export && mv ./__sapper__/export ./public",
+    "build:netlify": "npm run export && mv ./__sapper__/export ./public",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
@@ -15,10 +15,7 @@
   "dependencies": {
     "compression": "^1.7.1",
     "polka": "next",
-    "sirv": "^0.4.0",
-    "sapper": "^0.27.0",
-    "svelte": "^3.0.0",
-    "svelte-preprocess": "^3.7.1"
+    "sirv": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -36,6 +33,9 @@
     "rollup": "^1.20.0",
     "rollup-plugin-babel": "^4.0.2",
     "rollup-plugin-svelte": "^5.0.1",
-    "rollup-plugin-terser": "^4.0.4"
+    "rollup-plugin-terser": "^4.0.4",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^3.7.1"
   }
 }

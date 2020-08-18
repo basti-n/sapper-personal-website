@@ -10,7 +10,7 @@
         { src: "images/projects/StravaScript_2.png", class: "two-screens" }
       ],
       description:
-        "Track your time spend coding. Built with React. Expess powered Backend with MongoDB."
+        "Track your time spend coding. Built with React. Express powered Backend with MongoDB."
     },
     {
       name: "ToDo App",
