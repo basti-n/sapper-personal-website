@@ -50,7 +50,7 @@
 
 {#if imageLoaded}
   <div
-    in:fade
+    in:fade|local
     class="icon"
     class:large={size === 'large'}
     class:small={size === 'small'}

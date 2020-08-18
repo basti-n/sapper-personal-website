@@ -4,6 +4,16 @@
   import Burger from "./Burger.svelte";
 
   export let currentRoute;
+  const navLinks = [
+    { text: "home", url: "." },
+    { text: "about", url: "about" },
+    { text: "projects", url: "projects" },
+    { text: "stack", url: "stack" },
+    { text: "github", url: "https://github.com/basti-n" },
+    { text: "codepen", url: "https://codepen.io/basti-n" },
+    { text: "linkedin", url: "https://www.linkedin.com/in/sebastian-neumair/" },
+    { text: "email", url: "mailto:sebastian.neumair@gmail.com" }
+  ];
   let showOverlay;
 
   function setShowOverlay({ detail: shouldShow }) {
@@ -45,5 +55,10 @@
 </nav>
 
 {#if showOverlay}
-  <Overlay on:close={setShowOverlay} />
+  <Overlay
+    on:close={setShowOverlay}
+    navLinks={navLinks.map(link => ({
+      ...link,
+      active: currentRoute === link.text
+    }))} />
 {/if}

@@ -3,7 +3,7 @@
   import MilestoneDescription from "./Milestone-Description.svelte";
 
   export let description;
-  export let timelineMarker;
+  export let timelineMarker = "";
 </script>
 
 <style lang="scss">
