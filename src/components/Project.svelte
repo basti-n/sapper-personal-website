@@ -36,14 +36,14 @@
           display: flex;
           margin: 0 auto;
           height: auto;
-          max-height: 350px;
+          max-width: 300px;
 
           &:not(:last-child) {
             margin-bottom: 10px;
           }
 
           &.two-screens {
-            width: 75%;
+            width: 60%;
           }
 
           &.three-screens {
