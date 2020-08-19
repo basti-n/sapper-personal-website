@@ -1,8 +1,20 @@
 <script>
+  import { onMount } from 'svelte';
+  import { FOOTER_HEIGHT, HEADER_HEIGHT } from '../constants';
   import Nav from '../components/navigation/Nav.svelte';
   import SocialLinks from '../components/social-links/SocialLinks.svelte';
 
   export let segment;
+
+  let height = '100vh';
+
+  onMount(async () => onResize());
+
+  function onResize() {
+    const innerHeight = window.innerHeight;
+    const availableContentArea = innerHeight - FOOTER_HEIGHT - HEADER_HEIGHT;
+    height = availableContentArea + 'px';
+  }
 </script>
 
 <style lang="scss" global>
@@ -48,10 +60,12 @@
   }
 </style>
 
+<svelte:window on:resize={onResize} />
+
 <div class="layout">
   <Nav currentRoute={segment} />
 
-  <main>
+  <main style="height: {height}">
     <slot />
   </main>
 
