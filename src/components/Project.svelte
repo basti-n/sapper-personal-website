@@ -1,25 +1,25 @@
 <script>
-  import { onMount } from "svelte";
-  import MilestoneSynopsis from "./milestone/Milestone-Synopsis.svelte";
-  import MilestoneMarker from "./milestone/Milestone-Marker.svelte";
-  import { HEADER_HEIGHT, FOOTER_HEIGHT } from "../constants";
+  import { onMount } from 'svelte';
+  import MilestoneSynopsis from './milestone/Milestone-Synopsis.svelte';
+  import MilestoneMarker from './milestone/Milestone-Marker.svelte';
+  import { HEADER_HEIGHT, FOOTER_HEIGHT } from '../constants';
 
   export let description;
   export let text;
   export let images;
 
-  let height = "auto";
+  let height = 'auto';
 
   onMount(async () => setContainerHeight());
 
   function setContainerHeight() {
     const availableHeight = window.innerHeight - HEADER_HEIGHT - FOOTER_HEIGHT;
-    height = availableHeight + "px";
+    height = availableHeight + 'px';
   }
 </script>
 
 <style lang="scss">
-  @import "../style/global.scss";
+  @import '../style/global.scss';
 
   .project {
     scroll-snap-align: start;
@@ -37,6 +37,10 @@
           margin: 0 auto;
           height: auto;
           max-width: 300px;
+
+          @include mobile-only {
+            max-width: 260px;
+          }
 
           &:not(:last-child) {
             margin-bottom: 10px;
