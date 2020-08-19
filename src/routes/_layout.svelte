@@ -1,12 +1,12 @@
 <script>
-  import Nav from "../components/navigation/Nav.svelte";
-  import SocialLinks from "../components/social-links/SocialLinks.svelte";
+  import Nav from '../components/navigation/Nav.svelte';
+  import SocialLinks from '../components/social-links/SocialLinks.svelte';
 
   export let segment;
 </script>
 
 <style lang="scss" global>
-  @import "../style/global.scss";
+  @import '../style/global.scss';
 
   :root {
     box-sizing: border-box;
@@ -18,7 +18,7 @@
     width: calc(100% - var(--summary-bar-width));
     height: 100vh;
 
-    @media (max-width: 480px) {
+    @include mobile-only {
       width: 100%;
     }
   }
@@ -37,7 +37,11 @@
     display: flex;
     justify-content: center;
 
-    @media (max-width: 480px) {
+    @include mobile-only {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
     }
   }
