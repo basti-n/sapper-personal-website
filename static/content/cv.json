@@ -1,13 +1,22 @@
 [
   {
+    "title": "CHECK24 Vergleichsportal Finanzen GmbH",
+    "subtitle": "Senior Frontend Developer",
+    "description": [
+      "Mitgestaltung und Verbesserung von SPAs für Kreditvergleich und Kreditantragstrecke (Angular mit Node.js Backend-for-Frontend).",
+      "Weiterentwicklung eines internen CMS (Node.js) zum serverseitigen Rendern von SEO und SEA LPs."
+    ],
+    "timelineMarker": "seit November 2020"
+  },
+  {
     "title": "Paragon Data",
     "subtitle": "Frontend Entwickler",
     "description": [
       "Erstellung von Single Page Applications mit Angular und Typescript.",
-      "Weiterentwicklung der webbasierten In-Store-App für  einen der größten deutschen Buchhändler (Angular 8).",
+      "Weiterentwicklung der webbasierten In-Store-App für  einen der größten deutschen Buchhändler (Angular v8+).",
       "Entwicklung einer Observables-basierten Javascript-Library (veröffentlicht als npm-Paket) mit Angular und RxJs."
     ],
-    "timelineMarker": "seit Juni 2019"
+    "timelineMarker": "bis November 2020"
   },
   {
     "title": "neue fische - School and Pool for digital Talent",
@@ -28,7 +37,7 @@
     "timelineMarker": "bis Februar 2019"
   },
   {
-    "title": "CHECK24 Kredit",
+    "title": "CHECK24 Vergleichsportal Finanzen GmbH",
     "subtitle": "Produktmanager Digitalisierung",
     "description": [
       "IT-Projektmanagement: Digitalisierung Kreditantragsprozess",
